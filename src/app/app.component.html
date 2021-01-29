@@ -1,0 +1,49 @@
+<ion-app>
+  <ion-content>
+    <ion-menu contentId="main-content" menuId="custom" side="start" (ionWillOpen)="onMenuOpen()" (ionDidOpen)="menuOpened()">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>
+            <div>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="3">
+                    <ion-icon class="profile-icon-css" name="person-circle-outline"></ion-icon>
+                  </ion-col>
+                  <ion-col class="usercred-div-css"><p class="usertiitle-css">{{LoginName}}</p> <span class="usertype-css">({{LoginUsertype}})</span></ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-title>
+        </ion-toolbar>
+      </ion-header> 
+      <ion-content>
+        <ion-list>
+          <ion-item (click)="RedirectToPage('itemdetail')">
+            <ion-icon name="home-outline"></ion-icon>Home
+          </ion-item>
+       
+          <!-- <ion-item (click)="RedirectToPage('itemdetail')">
+            <ion-icon name="information-circle-outline"></ion-icon> Add Item
+          </ion-item> -->
+          <ion-item (click)="RedirectToPage('dashboardpage')">
+            <ion-icon name="people-outline"></ion-icon> Main list
+          </ion-item>
+          <ion-item (click)="RedirectToPage('selecteditems')">
+            <ion-icon name="people-outline"></ion-icon> Selected list
+          </ion-item>
+          <ion-item (click)="RedirectToPage('aboutuspage')">
+            <ion-icon name="person-outline" ></ion-icon> About Us
+          </ion-item>
+          <ion-item (click)="RedirectToPage('contactuspage')">
+            <ion-icon name="call-outline"></ion-icon> Contact
+          </ion-item>
+          <ion-item (click)="logout()">
+            <ion-icon name="log-out-outline"></ion-icon> Logout
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content" main></ion-router-outlet>
+  </ion-content>
+</ion-app>

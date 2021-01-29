@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title side="center">Selected list</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img  *ngIf="hidden"  src="/assets/images/nodata.jpg">
+  <form *ngIf="!hidden"  (ngSubmit)="saveSenderDetails()">
+  <app-sendertravelerdata *ngFor="let itemData of itemsListData"  (deleteSelectedItemEvent)="getuserData()" [itemsData]="itemData" [radioselecbtns]="false" [bottomoptions]="true"></app-sendertravelerdata>
+</form>
+</ion-content>
+<app-footer></app-footer>

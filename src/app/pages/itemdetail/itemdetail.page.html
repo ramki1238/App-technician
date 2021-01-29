@@ -1,0 +1,157 @@
+<app-sidemenu [pagetitle]="pagetitle"></app-sidemenu>
+
+<ion-content>
+  <div *ngIf="divTag">
+    <form [formGroup]="senderData" (ngSubmit)="saveSenderDetails()">
+      <ion-item>
+        <ion-label>From state</ion-label>
+        <ion-select placeholder="Select state" formControlName="fromstateid"
+          (ionChange)="dataChange('fromstate',$event)">
+          <ion-select-option *ngFor="let state of fromstatesData" [value]="state.id">{{state.statename}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>From District</ion-label>
+        <ion-select placeholder="Select district" formControlName="fromdist"
+          (ionChange)="dataChange('fromdistrict',$event)">
+          <ion-select-option *ngFor="let district of fromDistrictData" [value]="district.id">{{district.distname}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>From city</ion-label>
+        <ion-select placeholder="Select city" formControlName="fromcity">
+          <ion-select-option *ngFor="let city of fromcityData" [value]="city.id">{{city.mandalename}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">From address</ion-label>
+        <ion-textarea formControlName="fromarea" rows="3" cols="20" placeholder="Enter address"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>To state</ion-label>
+        <ion-select placeholder="Select state" formControlName="tostate" (ionChange)="dataChange('tostate',$event)">
+          <ion-select-option *ngFor="let state of tostatesData" [value]="state.id">{{state.statename}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>To District</ion-label>
+        <ion-select placeholder="Select district" formControlName="todist"
+          (ionChange)="dataChange('todistrict',$event)">
+          <ion-select-option *ngFor="let district of toDistrictData" [value]="district.id">{{district.distname}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>To city</ion-label>
+        <ion-select placeholder="Select city" formControlName="tocity">
+          <ion-select-option *ngFor="let city of tocityData" [value]="city.id">{{city.mandalename}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">To address</ion-label>
+        <ion-textarea rows="3" cols="20" formControlName="toarea" placeholder="Enter address"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date of travel</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" formControlName="dateoftravel" placeholder="Select Date">
+        </ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Time of travel</ion-label>
+        <ion-datetime displayFormat="h:mm:a" formControlName="timeoftravel" placeholder="Select Time"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Item Type</ion-label>
+        <ion-input formControlName="itemtype" placeholder="Item type"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Item packing</ion-label>
+        <ion-input formControlName="packing" placeholder="Packing type"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Item weight</ion-label>
+        <ion-input formControlName="weight" placeholder="Weight"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Cost of Item</ion-label>
+        <ion-input formControlName="amount" placeholder="Amount"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Description</ion-label>
+        <ion-input formControlName="description" placeholder="Description"></ion-input>
+      </ion-item>
+      <ion-button type="submit" expand="full" color="danger" class="btnsubmit">Submit</ion-button>
+    </form>
+  </div>
+  <div *ngIf="!divTag">
+    <form [formGroup]="travelerData" (ngSubmit)="saveTravelerDetails()">
+      <ion-item>
+        <ion-label>From state</ion-label>
+        <ion-select placeholder="Select state" formControlName="fromstateid"
+          (ionChange)="dataChange('fromstate',$event)">
+          <ion-select-option *ngFor="let state of fromstatesData" [value]="state.id">{{state.statename}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>From District</ion-label>
+        <ion-select placeholder="Select district" formControlName="fromdist"
+          (ionChange)="dataChange('fromdistrict',$event)">
+          <ion-select-option *ngFor="let district of fromDistrictData" [value]="district.id">{{district.distname}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>From city</ion-label>
+        <ion-select placeholder="Select city" formControlName="fromcity">
+          <ion-select-option *ngFor="let city of fromcityData" [value]="city.id">{{city.mandalename}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">From address</ion-label>
+        <ion-textarea formControlName="fromarea" rows="3" cols="20" placeholder="Enter address"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>To state</ion-label>
+        <ion-select placeholder="Select state" formControlName="tostate" (ionChange)="dataChange('tostate',$event)">
+          <ion-select-option *ngFor="let state of tostatesData" [value]="state.id">{{state.statename}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>To District</ion-label>
+        <ion-select placeholder="Select district" formControlName="todist"
+          (ionChange)="dataChange('todistrict',$event)">
+          <ion-select-option *ngFor="let district of toDistrictData" [value]="district.id">{{district.distname}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>To city</ion-label>
+        <ion-select placeholder="Select city" formControlName="tocity">
+          <ion-select-option *ngFor="let city of tocityData" [value]="city.id">{{city.mandalename}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">To address</ion-label>
+        <ion-textarea rows="3" cols="20" formControlName="toarea" placeholder="Enter address"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date of travel</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" formControlName="dateoftravel" placeholder="Select Date">
+        </ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Time of travel</ion-label>
+        <ion-datetime displayFormat="h:mm:a" formControlName="timeoftravel" placeholder="Select Time"></ion-datetime>
+      </ion-item>
+      <ion-button type="submit" expand="full" color="danger" class="btnsubmit">Submit</ion-button>
+    </form>
+  </div>
+</ion-content>
+<app-footer></app-footer>

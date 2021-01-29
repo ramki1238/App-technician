@@ -1,0 +1,8 @@
+{
+  "name": "TechnicianApp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

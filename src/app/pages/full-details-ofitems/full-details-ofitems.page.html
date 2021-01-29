@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>FullDetailsOfitems</ion-title>
+    <ion-buttons slot="start" (click)="backScreen()">
+      <ion-button autoHide="false" >
+        <ion-icon name="arrow-back-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="ItemData">
+<ion-card>
+  <ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <p><u>Dateoftravel</u></p>
+          <p>{{ItemData.dateoftravel}}</p>
+
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p><u>From </u></p>
+          <p>State :<span>{{ItemData.fromstate}}</span></p>
+          <p>District :<span>{{ItemData.fromdist}}</span></p>
+          <p>City :<span>{{ItemData.fromcity}}</span></p>
+          <p>Address :<span>{{ItemData.fromarea}}</span></p>
+        </ion-col>
+        <ion-col>
+          <p><u>To </u></p>
+          <p>State :<span>{{ItemData.tostate}}</span></p>
+          <p>District :<span>{{ItemData.todist}}</span></p>
+          <p>City :<span>{{ItemData.tocity}}</span></p>
+          <p>Address :<span>{{ItemData.toarea}}</span></p>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="ItemData.usertype === 'sender'?true:false">
+        <ion-col size="12"><p><u>Item details</u></p></ion-col>
+        <ion-col >
+          <p>itemtype :<span>{{ItemData.itemtype}}</span></p>
+          <p>packing :<span>{{ItemData.packing}}</span></p>
+          <p>description :<span>{{ItemData.description}}</span></p>
+        </ion-col>
+        <ion-col>
+          <p>weight :<span>{{ItemData.weight}}</span></p>
+          <p>amount :<span>{{ItemData.amount}}</span></p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+</ion-content>
+<app-footer></app-footer>

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title side="center">Main List</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img  *ngIf="hidden"  src="/assets/images/nodata.jpg">
+  <form [formGroup]="selectedData" (ngSubmit)="saveSenderDetails()">
+  <ion-radio-group  (ionChange)="radioGroupChange($event)" *ngIf="!hidden">
+  <app-sendertravelerdata *ngFor="let itemData of itemsListData" [itemsData]="itemData" [radioselecbtns]="true" [bottomoptions]="false"></app-sendertravelerdata>
+  </ion-radio-group>
+  <ion-button type="submit"  expand="full" color="danger" *ngIf="!hidden">Submit</ion-button>
+</form>
+</ion-content>
+<app-footer></app-footer>

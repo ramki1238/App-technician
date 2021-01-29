@@ -1,0 +1,71 @@
+<ion-content>
+  <div *ngIf="loginDiv">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <img src="../../../assets/images/login.jpg" />
+        </ion-col>
+      </ion-row>
+      <form [formGroup]="loginData" (ngSubmit)="loginValication()">
+        <ion-row>
+
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating">Mobile number</ion-label>
+              <ion-input type="text" formControlName="phoneno"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="login-footer">
+              <ion-button type="submit" expand="block" color="danger">SIGN IN</ion-button>
+              <p routerLink="/registerpage">Not Regested?</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="!loginDiv" id="showOtpMaindiv" class="otpdiv">
+        <form [formGroup]="otpForm" (ngSubmit)="submitOtp()">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-item class="inputField">
+                  <ion-input class="inputotp" type="number" formControlName="first" #a (keyup)="moveFocus($event,b,a)">
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-3>
+                <ion-item class="inputField">
+                  <ion-input class="inputotp" type="number" formControlName="second" #b (keyup)="moveFocus($event,c,a)">
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-3>
+                <ion-item class="inputField">
+                  <ion-input class="inputotp" type="number" formControlName="third" #c (keyup)="moveFocus($event,d,b)">
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col col-3>
+                <ion-item class="inputField">
+                  <ion-input class="inputotp" type="number" formControlName="fourth" #d (keyup)="moveFocus($event,d,c)">
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            
+          </ion-grid>
+         
+          <br>
+          <ion-button class="otpsubmitbtn"   expand="block" type="submit"  [disabled]="!otpForm.valid">Submit</ion-button>
+          <span (click)="resendOTP()"  style="float: right;
+          margin-right: 14px;font-size: 14px; font-style:bold rgb(153, 59, 30);text-decoration: underline;">
+   Dont receive OTP? Resend
+   </span>
+        </form>
+  </div>
+</ion-content>

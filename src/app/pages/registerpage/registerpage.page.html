@@ -1,0 +1,45 @@
+
+
+<ion-content>
+  <div *ngIf="registerdiv">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <img src="../../../assets/images/login.jpg" />
+        </ion-col>
+      </ion-row>
+      <form [formGroup]="registerForm" (ngSubmit)="registervalidation()">
+        <ion-row>
+
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating">Full name</ion-label>
+              <ion-input type="text" formControlName="fullname"></ion-input>
+            </ion-item>
+          </ion-col> 
+           <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="text" formControlName="emailid"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="floating">Mobile number</ion-label>
+              <ion-input type="text" formControlName="phone"></ion-input>
+            </ion-item>
+          </ion-col>
+        
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="register-footer">
+              <ion-button type="submit" expand="block" color="danger">Register</ion-button>
+              <p routerLink="/loginpage"> Login</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-grid>
+    </div>
+</ion-content>

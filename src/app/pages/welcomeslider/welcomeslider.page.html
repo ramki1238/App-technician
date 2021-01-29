@@ -1,0 +1,25 @@
+<!-- <ion-content>
+  <ion-slides [options]="slideOptsOne">
+    <ion-slide *ngFor="let s of silderItems">
+        <img src="../../assets/images/{{s}}.jpg">
+     </ion-slide>
+ </ion-slides>
+</ion-content> -->
+
+<!-- <ion-content>
+  <ion-slides pager="true" [options]="slideOpts" >
+    <ion-slide *ngFor="let slide of silderItems">
+       <img src="../../../assets/images/{{slide}}.jpg">
+     <h1>{{slide}}</h1>
+   </ion-slide>
+  </ion-slides>
+</ion-content>  -->
+
+<ion-content>
+<ion-slides pager="true" [options]="slideOpts" class="welcomeslides">
+    <ion-slide *ngFor="let slide of silderItems">
+       <img src="../../../assets/images/{{slide}}.jpg" alt="{{slide}}" (click)="loginScreenOpen($event)" >
+       <!-- <h1>{{slide.name}}</h1> -->
+      </ion-slide>
+</ion-slides>
+</ion-content>
