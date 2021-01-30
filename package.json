@@ -27,6 +27,8 @@
     "@ionic/angular": "^5.0.0",
     "@ionic/storage": "^2.3.1",
     "ionic-rating-component": "^1.1.6",
+    "ionic4-star-rating": "^1.1.1",
+    "ionic5-star-rating": "https://github.com/JeongJun-Lee/ionic5-star-rating/tarball/master",
     "moment": "^2.29.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

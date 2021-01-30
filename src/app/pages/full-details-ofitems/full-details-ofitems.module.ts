@@ -8,15 +8,13 @@ import { FullDetailsOfitemsPageRoutingModule } from './full-details-ofitems-rout
 
 import { FullDetailsOfitemsPage } from './full-details-ofitems.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-// import { IonicRatingModule } from 'ionic-rating-component';
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     FullDetailsOfitemsPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
   ],
   declarations: [FullDetailsOfitemsPage]
 })

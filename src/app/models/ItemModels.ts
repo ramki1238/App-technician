@@ -20,7 +20,8 @@ interface CityDatabase {
 }
 
 interface UserDatabase {
-  id:any
+  id:any 
+  itemid:any
   type: any
   itemtype: any
   packing: any

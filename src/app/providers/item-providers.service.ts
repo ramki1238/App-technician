@@ -100,4 +100,18 @@ export class ItemProvidersService {
     console.log(dataUrl);
     return this.http.get(dataUrl,httpOptions);
   }
+  saveItemRating(ItemData){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      })
+    };
+    //http://ijsrie.com/phpapi/api/review.php?itemid=2&rating=4&&reviewdesc=not
+     let remUrl="?itemid="+ItemData.itemid+"&&rating="+ItemData.rating+"&&reviewdesc="+ItemData.reviewdesc;
+    const dataUrl = ApiUrl+'/review.php'+remUrl;
+    console.log(dataUrl);
+    return this.http.get(dataUrl,httpOptions);
+  }
 }

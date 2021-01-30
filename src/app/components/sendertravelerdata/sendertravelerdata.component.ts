@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { NavigationExtras } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import * as moment from 'moment';
@@ -18,7 +19,8 @@ export class SendertravelerdataComponent implements OnInit {
   isSender = false;
   constructor(private itemprovider: ItemProvidersService,
     private commonUictrl: CommonUiControlService,
-    public loadingController: LoadingController) {
+    public loadingController: LoadingController,
+    private router:Router) {
 
   }
 
@@ -58,7 +60,15 @@ export class SendertravelerdataComponent implements OnInit {
         user: itemData
       }
     };
-    this.commonUictrl.navCtrl.navigate(['full-details-ofitems'],navigationExtras);
+    this.router.navigate(['full-details-ofitems'],navigationExtras);
   }
-
+  reviewPage(itemData){
+    console.log(itemData);
+    let navigationExtras: NavigationExtras = {
+      state: {
+        user: itemData
+      }
+    };
+    this.router.navigate(['starratingpageforitem'],navigationExtras);
+  }
 }

@@ -4,7 +4,7 @@ import {ComponentsModule} from './components/components.module'
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'selecteditems',
+    redirectTo: '',
     pathMatch: 'full'
   },
   {
@@ -55,6 +55,11 @@ const routes: Routes = [
     path: 'full-details-ofitems',
     loadChildren: () => import('./pages/full-details-ofitems/full-details-ofitems.module').then( m => m.FullDetailsOfitemsPageModule)
   },
+  {
+    path: 'starratingpageforitem',
+    loadChildren: () => import('./pages/starratingpageforitem/starratingpageforitem.module').then( m => m.StarratingpageforitemPageModule)
+  },
+
 
 
 ];

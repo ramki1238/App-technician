@@ -28,7 +28,6 @@ export class CommonUiControlService {
 
     })
     this.presentAlert("Success", "You logged in as " + usertype, ['Ok']);
-    // if(!this.menuCntrl.isEnabled) 
     this.menuCntrl.enable(true,'custom');
     this.navCtrl.navigateByUrl('/itemdetail',{ replaceUrl: true });
     loading.dismiss();
@@ -55,8 +54,6 @@ export class CommonUiControlService {
     return usertypeis;
   
   }
-
-
   async doLogOut() {
     const loading = await this.loadingController.create({
       message: 'Please wait'

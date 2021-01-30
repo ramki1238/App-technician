@@ -10,6 +10,7 @@ export class FullDetailsOfitemsPage implements OnInit {
 
   ItemData:UserDatabase
   constructor(private activatedRoute: ActivatedRoute,private router: Router) {
+    console.log("atleast come here");
     this.activatedRoute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
        console.log(this.router.getCurrentNavigation().extras.state.user);
